@@ -1,0 +1,57 @@
+﻿@page
+@model OTF.Pages.Restaurants.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Restaurant List</h1>
+
+<form method="get">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="SearchTerm" asp-for="SearchTerm">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+
+
+
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Cuisine
+            </th>
+        </tr>
+    </thead>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+<tr>
+    <td>
+        @restaurant.Name
+    </td>
+    <td>
+        @restaurant.Location
+    </td>
+    <td>
+        @restaurant.Cuisine
+    </td>
+    <td>
+       <a class="brn brn-outline-secondary" asp-page="./Details" asp-route-restaurantid="restaurant.Id">
+           <i class="fas fa-search-plus"></i>
+       </a>
+    </td>
+</tr>
+    }
+</table>
+<div>
+    @Model.Message
+</div>
+

@@ -1,0 +1,25 @@
+﻿@page
+@model OTF.Pages.Restaurants.Details
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shaped/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+<div>
+    Name: @Model.Restaurant.Name
+</div>
+<div>
+    Id: @Model.Restaurant.Id
+</div>
+
+<div>
+    Location: @Model.Restaurant.Location
+</div>
+
+<div>
+    Cuisine: @Model.Restaurant.Cuisine
+</div>
+<br />
+
+<a aso-page="./List" class="btn btn-primary"> All Restaurants</a>
